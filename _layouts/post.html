@@ -1,4 +1,121 @@
-<h1>Title</h1>
-<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <style>
+    body {
+        background-color: #1C1B22;
+      color: #e0e0e0;
+      font-family: monospace;
+      margin: 60px auto;
+      max-width: 960px;
+      font-weight: 400;
+      line-height: 25.5px;
+      font-size: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-{{content}}
+    a {
+      color: #8ab4f8;
+      text-decoration: none;
+    }
+
+    nav {
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    .date {
+      color: #aaa;
+      margin-bottom: 30px;
+      align-self: flex-start;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    article {
+      max-width: 640px;
+      position: relative;
+    }
+
+    article em {
+      color: #c792ea;
+      font-style: italic;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    .footnote-marker {
+      color: #8ab4f8;
+      vertical-align: super;
+      font-size: smaller;
+    }
+
+    .footnote {
+      position: absolute;
+      left: 680px; /* Position after article + some margin */
+      width: 220px;
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 0;
+    }
+    a {
+            color: rgb(158, 158, 255);
+        }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="{{ site.baseurl }}/">/ home</a> / <span>{{ page.title }}</span>
+  </nav>
+
+  <div class="date">{{ page.date | date: "%Y-%m-%d" }}</div>
+
+  <div class="content-wrapper">
+    <article>
+      {{ content | replace: '<sup id="fnref:', '<span class="footnote-marker" id="fnref:' | replace: '</sup>', '</span>' }}
+    </article>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all footnote references
+      const footnoteRefs = document.querySelectorAll('.footnote-marker');
+      
+      footnoteRefs.forEach(function(ref) {
+        const id = ref.id;
+        const footnoteId = id.replace('fnref:', 'fn:');
+        const footnote = document.getElementById(footnoteId);
+        
+        if (footnote) {
+          // Create a new element for the footnote in the margin
+          const marginNote = document.createElement('div');
+          marginNote.className = 'footnote';
+          marginNote.innerHTML = footnote.innerHTML;
+          
+          // Position the footnote at the same vertical position as the reference
+          marginNote.style.top = (ref.offsetTop) + 'px';
+          
+          // Add the footnote to the article
+          ref.parentNode.appendChild(marginNote);
+          
+          // Hide the original footnote
+          footnote.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <style>
+        body {
+            background-color: #1C1B22;
+            color: #ddd;
+            font-family: monospace;
+            margin: 0;
+            padding: 2rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        a {
+            color: #8ab4f8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #444;
+            margin: 1rem 0;
+        }
+
+        .header {
+            margin-bottom: 1rem;
+        }
+
+        .nav a {
+            margin-right: 1rem;
+            color: #aaa;
+        }
+
+        .projects,
+        .about {
+            margin-top: 2rem;
+        }
+
+        .project {
+            /* margin-bottom: 1rem; */
+            padding-top: 1rem;
+        }
+
+        .project-title {
+            color: #8ab4f8;
+            margin-right: 0.5rem;
+        }
+
+        .project-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .about {
+            /* margin-top: 3rem; */
+            max-width: 600px;
+        }
+        .container {
+            display: flex;
+            /* justify-content: space-between; */
+        }
+        .container .projects {
+            width: 65%;
+        }
+        .container .about {
+            width: 35%;
+        }
+        a {
+            color: rgb(158, 158, 255);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav">
+            <a href="/">/home</a>
+        </div>
+        <h1>{{ site.title | default: "The ramblings of a confused cs grad" }}</h1>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="projects">
+            {% for post in site.posts %}
+            <div class="project">
+                <span class="project-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+                <span class="project-date">{{ post.date }}</span>
+                <div>{{ post.description }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="about">
+            <p>Hi! I'm Vishnu Vardan, a software developer passionate about graphics programming and AI in video games. I use this site to share my projects and ideas. Some stuff I work on can be found at (<a href="https://github.com/vv-22">VV-22</a>). If you've chanced upon this site, I hope you have an interesting read!</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
