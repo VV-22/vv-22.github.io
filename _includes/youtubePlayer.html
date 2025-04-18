@@ -1,0 +1,20 @@
+<div class="video_wrapper">
+    <style>
+        .video_wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            padding-top: 25px;
+            height: 0;
+        }
+        .video_wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <iframe src="https://www.youtube.com/embed/{{ include.youtube_id}}?rel=0&modestbranding=1&showinfo=0"
+        frameborder="0" allowfullscreen></iframe>
+</div>

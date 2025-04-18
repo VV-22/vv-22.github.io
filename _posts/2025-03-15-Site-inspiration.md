@@ -12,9 +12,7 @@ layout: post
 [^a]: See [Dan Luu's writings about latency](https://danluu.com/keyboard-latency/)
 [^b]: See a cool setup by [Tristan Hume](https://thume.ca/2020/05/20/making-a-latency-tester/) -->
 
-
-
-I've been meaning to build a site the dawn of eternity. 
+I've been meaning to build a site the dawn of eternity.
 
 Surprisingly, I never did. I guess one of the perks of working in full-stack dev is that once you're done with the 9-5, you do not feel like building another site for the sake of "fun". But fast-forward a bit into the future, and I'm returning to college. At this point, making a web-page seems to be a no-brainer.
 

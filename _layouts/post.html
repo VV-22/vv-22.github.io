@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <style>
     body {
-        background-color: #1C1B22;
+      background-color: #1C1B22;
       color: #e0e0e0;
       font-family: monospace;
       margin: 60px auto;
@@ -64,15 +65,60 @@
 
     .footnote {
       position: absolute;
-      left: 680px; /* Position after article + some margin */
+      left: 680px;
+      /* Position after article + some margin */
       width: 220px;
       font-size: 0.9em;
       color: #aaa;
       margin-top: 0;
     }
+
     a {
-            color: rgb(158, 158, 255);
-        }
+      color: rgb(158, 158, 255);
+    }
+    /* Inline code styling */
+    code {
+      background-color: #2d2d39;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9em;
+      color: #f8f8f2;
+    }
+    /* Code block styling */
+    pre {
+      background-color: #2d2d39;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid #3a3a4a;
+      margin: 1.5em 0;
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      font-size: 0.95em;
+      display: block;
+      line-height: 1.5;
+    }
+    /* Optional: Add syntax highlighting colors */
+    .highlight .keyword {
+      color: #ff79c6;
+    }
+
+    .highlight .string {
+      color: #f1fa8c;
+    }
+
+    .highlight .number {
+      color: #bd93f9;
+    }
+
+    .highlight .comment {
+      color: #6272a4;
+    }
   </style>
 </head>
 
@@ -85,7 +131,7 @@
 
   <div class="content-wrapper">
     <article>
-      {{ content | replace: '<sup id="fnref:', '<span class="footnote-marker" id="fnref:' | replace: '</sup>', '</span>' }}
+      {{ content | replace: '<sup id="fnref:', '<span class=" footnote-marker" id="fnref:' | replace: '</sup>', '</span>' }}
     </article>
   </div>
 
