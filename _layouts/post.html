@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
+<head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
   <style>
     body {
@@ -17,16 +17,20 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0 20px;
     }
 
     a {
       color: #8ab4f8;
       text-decoration: none;
-    }
-
-    nav {
+    }    nav {
       margin-bottom: 20px;
       align-self: flex-start;
+      position: sticky;
+      top: 0;
+      background-color: #1C1B22;
+      z-index: 100;
+      padding: 10px 0;
     }
 
     .date {
@@ -51,16 +55,22 @@
     article em {
       color: #c792ea;
       font-style: italic;
+    }    ol {
+      padding-left: 20px;
     }
 
-    ol {
-      padding-left: 20px;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 1em 0;
     }
 
     .footnote-marker {
       color: #8ab4f8;
       vertical-align: super;
       font-size: smaller;
+      cursor: pointer;
     }
 
     .footnote {
@@ -71,6 +81,102 @@
       font-size: 0.9em;
       color: #aaa;
       margin-top: 0;
+    }
+
+    .footnote-inline {
+      display: none;
+      background-color: #2d2d39;
+      border: 1px solid #3a3a4a;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 8px 0;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 1024px) {
+      .footnote {
+        display: none;
+      }
+      
+      .footnote-inline {
+        display: block;
+      }
+    }    @media (max-width: 768px) {
+      body {
+        margin: 20px auto;
+        padding: 60px 15px 0 15px; /* Add top padding to account for fixed nav */
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 0;
+        padding: 15px;
+        background-color: #1C1B22;
+        border-bottom: 1px solid #444;
+        z-index: 1000;
+        font-size: 14px;
+        word-break: break-word;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      article {
+        max-width: 100%;
+      }
+
+      .content-wrapper {
+        width: 100%;
+      }
+
+      pre {
+        padding: 12px;
+        font-size: 14px;
+        overflow-x: auto;
+      }
+
+      code {
+        font-size: 0.85em;
+      }
+    }    @media (max-width: 480px) {
+      body {
+        margin: 10px auto;
+        padding: 76px 10px 0 10px; /* Add top padding for fixed nav */
+        font-size: 15px;
+        line-height: 22px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 0;
+        padding: 15px;
+        background-color: #1C1B22;
+        border-bottom: 1px solid #444;
+        z-index: 1000;
+        font-size: 14px;
+        word-break: break-word;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .date {
+        margin-bottom: 20px;
+      }
+
+      pre {
+        padding: 10px;
+        font-size: 13px;
+        margin: 1em 0;
+      }
     }
 
     a {
@@ -119,6 +225,9 @@
     .highlight .comment {
       color: #6272a4;
     }
+    p {
+      text-align: justify;
+    }
   </style>
 </head>
 
@@ -134,9 +243,28 @@
       {{ content | replace: '<sup id="fnref:', '<span class=" footnote-marker" id="fnref:' | replace: '</sup>', '</span>' }}
     </article>
   </div>
-
+  {% if page.math %}
+  <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% endif %}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Check if we're on mobile
+      const isMobile = window.innerWidth <= 1024;
+      
       // Get all footnote references
       const footnoteRefs = document.querySelectorAll('.footnote-marker');
       
@@ -146,16 +274,33 @@
         const footnote = document.getElementById(footnoteId);
         
         if (footnote) {
-          // Create a new element for the footnote in the margin
-          const marginNote = document.createElement('div');
-          marginNote.className = 'footnote';
-          marginNote.innerHTML = footnote.innerHTML;
-          
-          // Position the footnote at the same vertical position as the reference
-          marginNote.style.top = (ref.offsetTop) + 'px';
-          
-          // Add the footnote to the article
-          ref.parentNode.appendChild(marginNote);
+          if (isMobile) {
+            // On mobile, show footnote inline
+            const inlineNote = document.createElement('div');
+            inlineNote.className = 'footnote-inline';
+            inlineNote.innerHTML = footnote.innerHTML;
+            
+            // Insert after the paragraph containing the reference
+            const paragraph = ref.closest('p') || ref.parentNode;
+            paragraph.insertAdjacentElement('afterend', inlineNote);
+            
+            // Add click handler to toggle visibility
+            ref.addEventListener('click', function(e) {
+              e.preventDefault();
+              inlineNote.style.display = inlineNote.style.display === 'none' ? 'block' : 'none';
+            });
+          } else {
+            // On desktop, show footnote in margin
+            const marginNote = document.createElement('div');
+            marginNote.className = 'footnote';
+            marginNote.innerHTML = footnote.innerHTML;
+            
+            // Position the footnote at the same vertical position as the reference
+            marginNote.style.top = (ref.offsetTop) + 'px';
+            
+            // Add the footnote to the article
+            ref.parentNode.appendChild(marginNote);
+          }
           
           // Hide the original footnote
           footnote.style.display = 'none';

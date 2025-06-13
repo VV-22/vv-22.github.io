@@ -36,9 +36,30 @@
             margin-bottom: 1rem;
         }
 
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+
         .nav a {
             margin-right: 1rem;
             color: #aaa;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: #aaa;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
         }
 
         .projects,
@@ -47,7 +68,6 @@
         }
 
         .project {
-            /* margin-bottom: 1rem; */
             padding-top: 1rem;
         }
 
@@ -62,21 +82,113 @@
         }
 
         .about {
-            /* margin-top: 3rem; */
             max-width: 600px;
         }
+
         .container {
             display: flex;
-            /* justify-content: space-between; */
         }
+
         .container .projects {
             width: 65%;
         }
+
         .container .about {
             width: 35%;
         }
+
         a {
             color: rgb(158, 158, 255);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .container .projects,
+            .container .about {
+                width: 100%;
+            }
+
+            .about {
+                margin-top: 2rem;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .container .projects {
+                width: 100%;
+            }
+
+            .container .about {
+                display: none;
+            }
+
+            .about-mobile {
+                display: block;
+                background: #23222a;
+                color: #ddd;
+                padding: 1.5rem 1rem 1rem 1rem;
+                margin-top: 2rem;
+                border-radius: 8px;
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .about-mobile {
+                display: none;
+            }
+        }
+
+        /* Hamburger menu modal */
+        .about-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-modal-content {
+            background: #23222a;
+            color: #ddd;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 90vw;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .about-modal-close {
+            background: none;
+            border: none;
+            color: #8ab4f8;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -86,6 +198,11 @@
     <div class="header">
         <div class="nav">
             <a href="/">/home</a>
+            <div class="hamburger" id="hamburger-menu" aria-label="Show about section" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <h1>{{ site.title | default: "The Journey of a Curious CS Grad" }}</h1>
         <hr>
@@ -104,7 +221,38 @@
             <p>Hi! I'm Vishnu Vardan, a software developer passionate about graphics programming and AI in video games. I use this site to share my projects and ideas. Some stuff I work on can be found at (<a href="https://github.com/vv-22">VV-22</a>). If you've chanced upon this site, I hope you have an interesting read!</p>
         </div>
     </div>
+    <div class="about-mobile" id="about-mobile">
+        <p>Hi! I'm Vishnu Vardan, a software developer passionate about graphics programming and AI in video games. I use this site to share my projects and ideas. Some stuff I work on can be found at (<a href="https://github.com/vv-22">VV-22</a>). If you've chanced upon this site, I hope you have an interesting read!</p>
+    </div>
+    <div class="about-modal" id="about-modal">
+        <div class="about-modal-content">
+            <button class="about-modal-close" id="about-modal-close" aria-label="Close about section">&times;</button>
+            <p>Hi! I'm Vishnu Vardan, a software developer passionate about graphics programming and AI in video games. I use this site to share my projects and ideas. Some stuff I work on can be found at (<a href="https://github.com/vv-22">VV-22</a>). If you've chanced upon this site, I hope you have an interesting read!</p>
+        </div>
+    </div>
+    <script>
+        // Hamburger menu toggles about modal on mobile
+        const hamburger = document.getElementById('hamburger-menu');
+        const aboutModal = document.getElementById('about-modal');
+        const aboutModalClose = document.getElementById('about-modal-close');
 
+        function showAboutModal() {
+            aboutModal.style.display = 'flex';
+        }
+
+        function hideAboutModal() {
+            aboutModal.style.display = 'none';
+        }
+
+        hamburger && hamburger.addEventListener('click', showAboutModal);
+        hamburger && hamburger.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') showAboutModal();
+        });
+        aboutModalClose && aboutModalClose.addEventListener('click', hideAboutModal);
+        aboutModal && aboutModal.addEventListener('click', function(e) {
+            if (e.target === aboutModal) hideAboutModal();
+        });
+    </script>
 
 </body>
 

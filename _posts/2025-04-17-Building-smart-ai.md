@@ -81,7 +81,7 @@ With the perception system outlined above being implemented, the NPC has emergen
 
 In order to build a well-defined behavior for the NPC, we used behavior trees. For the uninitiated, behavior trees are a super-easy way to build complex behavior without needing to manage each behavior individually. Unreal Engine provides a standard way to do so, and by playtesting, we ended up with the following tree:
 
-![Behavior-tree](/assets/img/behavior-tree.png){:style="max-width: 640px;"}
+![Behavior-tree](/assets/img/behavior-tree.png)
 
 
 The AI has 4 "states" it can be in:
