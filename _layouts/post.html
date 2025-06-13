@@ -31,6 +31,7 @@
       background-color: #1C1B22;
       z-index: 100;
       padding: 10px 0;
+      width: 100%;
     }
 
     .date {
@@ -228,6 +229,35 @@
     p {
       text-align: justify;
     }
+    
+    /* MathJax responsive styles */
+    mjx-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      mjx-container {
+        font-size: 0.9em;
+        max-width: 100%;
+        overflow-x: auto;
+        display: block;
+      }
+      
+      mjx-container[display="true"] {
+        margin: 1em 0;
+        padding: 0.5em;
+        background-color: #2d2d39;
+        border-radius: 4px;
+        border: 1px solid #3a3a4a;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      mjx-container {
+        font-size: 0.8em;
+      }
+    }
   </style>
 </head>
 
@@ -259,16 +289,19 @@
     </script>
     <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    {% endif %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    {% endif %}  <script>
+    function positionFootnotes() {
       // Check if we're on mobile
       const isMobile = window.innerWidth <= 1024;
+      
+      // Clear existing positioned footnotes
+      document.querySelectorAll('.footnote').forEach(fn => fn.remove());
+      document.querySelectorAll('.footnote-inline').forEach(fn => fn.remove());
       
       // Get all footnote references
       const footnoteRefs = document.querySelectorAll('.footnote-marker');
       
-      footnoteRefs.forEach(function(ref) {
+      footnoteRefs.forEach(function(ref, index) {
         const id = ref.id;
         const footnoteId = id.replace('fnref:', 'fn:');
         const footnote = document.getElementById(footnoteId);
@@ -290,23 +323,98 @@
               inlineNote.style.display = inlineNote.style.display === 'none' ? 'block' : 'none';
             });
           } else {
-            // On desktop, show footnote in margin
+            // On desktop, create a margin note that positions itself naturally
             const marginNote = document.createElement('div');
             marginNote.className = 'footnote';
             marginNote.innerHTML = footnote.innerHTML;
+            marginNote.setAttribute('data-ref-id', id);
             
-            // Position the footnote at the same vertical position as the reference
-            marginNote.style.top = (ref.offsetTop) + 'px';
+            // Instead of calculating position, let CSS handle it
+            ref.setAttribute('data-footnote-index', index);
+            marginNote.setAttribute('data-footnote-index', index);
             
             // Add the footnote to the article
-            ref.parentNode.appendChild(marginNote);
+            const article = document.querySelector('article');
+            article.appendChild(marginNote);
           }
           
           // Hide the original footnote
           footnote.style.display = 'none';
         }
       });
-    });
+      
+      // Use CSS to position footnotes based on their corresponding reference
+      if (!isMobile) {
+        const style = document.createElement('style');
+        style.textContent = `
+          .footnote-marker[data-footnote-index]::after {
+            content: "";
+            position: absolute;
+            left: 790px;
+            width: 1px;
+            height: 1px;
+            pointer-events: none;
+          }
+          
+          .footnote[data-footnote-index] {
+            position: absolute;
+            left: 790px;
+          }
+        `;
+        
+        footnoteRefs.forEach(function(ref, index) {
+          const marginNote = document.querySelector(`.footnote[data-footnote-index="${index}"]`);
+          if (marginNote) {
+            // Position footnote at the same line as its reference
+            const computedStyle = window.getComputedStyle(ref);
+            const refTop = ref.offsetTop;
+            marginNote.style.top = refTop + 'px';
+          }
+        });
+        
+        document.head.appendChild(style);
+      }
+    }
+      // Wait for all content including images to load
+    function waitForAllContent() {
+      // Wait for images
+      const images = document.querySelectorAll('img');
+      let loadedImages = 0;
+      
+      function checkIfAllLoaded() {
+        if (loadedImages === images.length) {
+          // Add a small delay to ensure layout is stable
+          setTimeout(positionFootnotes, 250);
+        }
+      }
+      
+      if (images.length === 0) {
+        positionFootnotes();
+        return;
+      }
+      
+      images.forEach(img => {
+        if (img.complete) {
+          loadedImages++;
+        } else {
+          img.addEventListener('load', () => {
+            loadedImages++;
+            checkIfAllLoaded();
+          });
+          img.addEventListener('error', () => {
+            loadedImages++;
+            checkIfAllLoaded();
+          });
+        }
+      });
+      
+      checkIfAllLoaded();
+    }
+    
+    // Use multiple events to ensure footnotes are positioned correctly
+    document.addEventListener('DOMContentLoaded', waitForAllContent);
+    window.addEventListener('load', () => setTimeout(positionFootnotes, 100));
+    window.addEventListener('resize', () => setTimeout(positionFootnotes, 100));
   </script>
 </body>
 </html>
