@@ -15,7 +15,7 @@ My very thanks to Prof. Amit Shesh for all his guidance on this project, and for
 
 ## Premise
 
-As a game developer who also loves playing video games, I've always worked on an abstraction layer, be it Unity or Unreal or any other application. I've never directly with the system level APIs and always wondered how these abstractions work. So when I had the chance to study computer graphics at Northeastern University, I pounced on the it. Over the course of 4 months, I built a small renderer, with support for hierarchial scenengraphs, and some sample scenes with dynamic transformations and so on and so forth. The experience was quite interesting, and left me longing for more. [^a]
+As a game developer who also loves playing video games, I've always worked on an abstraction layer, be it Unity or Unreal or any other application. I've never worked directly with the system level APIs and always wondered how these abstractions work. So when I had the chance to study computer graphics at Northeastern University, I pounced on the it. Over the course of 4 months, I built a small renderer, with support for hierarchial scenengraphs, and some sample scenes with dynamic transformations and so on and so forth. The experience was quite interesting, and left me longing for more. [^a]
 
 And so began my journey of exploration, the ways in which devs have squeezed every last ounce of performance from a computer, how games run the way they do right now are nothing short of black magic.[^b] I've learnt of some of the smoke and mirrors that developers do to mask performance constraints , and how skillfully they blend it with gameplay so the player is never aware of the same. [^c]
 
@@ -146,13 +146,11 @@ Once the pipeline changes were made, I could get back to working on merging the 
 {%include youtubePlayer.html youtube_id="TSwlAh5IPJk"%}
 (This scene has a spotlight and a point light, along with 3 different objects, each with their own set of textures.)
 
-
 ## Future Plans and Finishing Thoughts
 
 At this point, I'm gunning towards building a fully editable 3D world. But in order to do that, I'd have to build a small GUI where I can edit world-nodes, add components, import and export scenegraphs and so on. I already have a way to import a scenegraph (using a text file), so in the upcoming weeks, I will be focusing on building a Graphical UI with ImGUI, then writing exporters for the 3d world. Post that, it is very likely that I will run into performance issues, so I've been reading up on Clustered forward rendering for now. Maybe I'll add some HDR, Anti-aliasing and tonemapping and I should be able to create something that is capable of rendering relatively large worlds at ease.
 
 I hope you've had an interesting read. Thanks for stopping by!
-
 
 [^a]: [Github](https://github.com/VV-22/CS5310)
 [^b]: [Silent Hill's fog](https://www.polygon.com/playstation/24196061/silent-hill-crash-bandicoot-tech-limitations)
