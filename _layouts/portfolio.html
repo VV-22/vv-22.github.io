@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <style>
+        body {
+            background-color: #1C1B22;
+            color: #ddd;
+            font-family: monospace;
+            margin: 0;
+            padding: 2rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        a {
+            color: #8ab4f8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .nav a {
+            margin-right: 1rem;
+            color: #aaa;
+        }
+
+        .nav a:hover {
+            color: #8ab4f8;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-card {
+            background: #2a2a35;
+            border: 1px solid #3a3a4a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #8ab4f8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(138, 180, 248, 0.1);
+        }
+
+        .project-title {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .project-date {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: #444;
+            color: #ddd;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #8ab4f8;
+            padding: 0.5rem 1rem;
+            border: 1px solid #8ab4f8;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #8ab4f8;
+            color: #1C1B22;
+            text-decoration: none;
+        }
+
+        .skills-section {
+            margin: 3rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #2a2a35;
+            border: 1px solid #3a3a4a;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .skill-category h3 {
+            color: #8ab4f8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-list li {
+            color: #ddd;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "▸";
+            color: #8ab4f8;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="nav">
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/portfolio' | relative_url }}">Portfolio</a>
+                <a href="{{ '/about' | relative_url }}">About</a>
+            </nav>
+        </div>
+
+        <main>
+            <h1>{{ page.title }}</h1>
+            
+            {% if page.description %}
+            <p>{{ page.description }}</p>
+            {% endif %}
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    {% for project in site.data.projects %}
+                    <div class="project-card">
+                        <div class="project-title">{{ project.title }}</div>
+                        {% if project.date %}
+                        <div class="project-date">{{ project.date | date: "%B %Y" }}</div>
+                        {% endif %}
+                        <div class="project-description">{{ project.description }}</div>
+                        
+                        {% if project.technologies %}
+                        <div class="project-tech">
+                            {% for tech in project.technologies %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <div class="project-links">
+                            {% if project.url %}
+                            <a href="{{ project.url | relative_url }}" class="project-link">View Project</a>
+                            {% endif %}
+                            {% if project.github %}
+                            <a href="{{ project.github }}" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            {% endif %}
+                            {% if project.demo %}
+                            <a href="{{ project.demo }}" class="project-link" target="_blank" rel="noopener">Live Demo</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            {% if page.skills %}
+            <section class="skills-section">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    {% for category in page.skills %}
+                    <div class="skill-category">
+                        <h3>{{ category.name }}</h3>
+                        <ul class="skill-list">
+                            {% for skill in category.items %}
+                            <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            {{ content }}
+        </main>
+    </div>
+</body>
+
+</html>

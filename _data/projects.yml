@@ -1,4 +1,31 @@
 - title: Keyboard Latency Testing
   url: /keyboard-latency-testing
   date: 2024-03-27
-  description: Lightweight keyboard re-mapper latency testing
+  description: Lightweight keyboard re-mapper latency testing tool for measuring input lag and optimizing gaming performance.
+  technologies:
+    - C++
+    - Windows API
+    - Performance Analysis
+  github: https://github.com/vv-22/keyboard-latency-testing
+
+- title: OpenGL Shadow Volume Renderer
+  url: /rendering-with-opengl
+  date: 2025-06-12
+  description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, and PBR materials for realistic 3D visualization.
+  technologies:
+    - OpenGL
+    - C++
+    - GLSL Shaders
+    - 3D Graphics
+    - PBR Rendering
+
+- title: AI Behavior System
+  url: /building-smart-ai
+  date: 2025-04-17
+  description: Intelligent AI system featuring behavior trees and A* pathfinding for game characters with dynamic decision-making capabilities.
+  technologies:
+    - Python
+    - AI/ML
+    - Pathfinding Algorithms
+    - Behavior Trees
+    - Game Development
