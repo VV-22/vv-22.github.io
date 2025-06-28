@@ -73,8 +73,8 @@
         }
 
         .project-card {
-            background: #2a2a35;
-            border: 1px solid #3a3a4a;
+            background: #1a1625;
+            border: 1px solid #2a2a35;
             border-radius: 8px;
             padding: 1.5rem;
             transition: all 0.15s ease;
@@ -82,8 +82,10 @@
             overflow: hidden;
             min-height: 300px;
             backdrop-filter: blur(1px);
-            animation: fadeInUp 0.3s ease-out;
-            animation-fill-mode: both;
+            display: flex;
+            flex-direction: column;
+            /* animation: fadeInUp 0.3s ease-out;
+            animation-fill-mode: both; */
         }
 
         @keyframes fadeInUp {
@@ -145,7 +147,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(28, 27, 34, 0.7) 0%, rgba(42, 42, 53, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(26, 22, 37, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
             z-index: 1;
             transition: background 0.15s ease;
         }
@@ -155,7 +157,7 @@
         }
 
         .project-card:hover::after {
-            background: linear-gradient(135deg, rgba(28, 27, 34, 0.3) 0%, rgba(42, 42, 53, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(26, 22, 37, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
         }
 
         .project-card > * {
@@ -164,9 +166,9 @@
         }
 
         .project-card:hover {
-            border-color: #8ab4f8;
+            border-color: #2a2a35;
             transform: translateY(-8px) scale(1.08);
-            box-shadow: 0 12px 40px rgba(138, 180, 248, 0.3), 0 0 30px rgba(138, 180, 248, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.2);
             z-index: 10;
         }
 
@@ -176,16 +178,12 @@
             margin-bottom: 0.5rem;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            background: linear-gradient(135deg, #fff 0%, #8ab4f8 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             transition: all 0.15s ease;
         }
 
         .project-card:hover .project-title {
-            text-shadow: 0 0 10px rgba(138, 180, 248, 0.5);
-            -webkit-text-fill-color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
         }
 
         .project-date {
@@ -219,6 +217,7 @@
         .project-links {
             display: flex;
             gap: 1rem;
+            margin-top: auto;
         }
 
         .project-link {
@@ -247,14 +246,14 @@
         }
 
         .skill-category {
-            background: #2a2a35;
-            border: 1px solid #3a3a4a;
+            background: #0f0f15;
+            border: 1px solid #1a1a20;
             border-radius: 8px;
             padding: 1.5rem;
         }
 
         .skill-category h3 {
-            color: #8ab4f8;
+            color: #aaa;
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
@@ -274,7 +273,7 @@
 
         .skill-list li::before {
             content: "▸";
-            color: #8ab4f8;
+            color: #666;
             position: absolute;
             left: 0;
         }
@@ -302,7 +301,7 @@
             content: '';
             position: absolute;
             width: 3px;
-            background-color: #8ab4f8;
+            background-color: #444;
             top: 0;
             bottom: 0;
             left: 30px;
@@ -323,15 +322,15 @@
             height: 20px;
             left: 20px;
             background-color: #1C1B22;
-            border: 3px solid #8ab4f8;
+            border: 3px solid #444;
             border-radius: 50%;
             z-index: 1;
         }
 
         .timeline-content {
             padding: 20px 30px;
-            background-color: #2a2a35;
-            border: 1px solid #3a3a4a;
+            background-color: #0f0f15;
+            border: 1px solid #1a1a20;
             border-radius: 8px;
             position: relative;
         }
@@ -342,7 +341,7 @@
             top: 28px;
             left: -10px;
             border: 10px solid transparent;
-            border-right-color: #3a3a4a;
+            border-right-color: #1a1a20;
         }
 
         .timeline-content::after {
@@ -351,11 +350,11 @@
             top: 29px;
             left: -8px;
             border: 9px solid transparent;
-            border-right-color: #2a2a35;
+            border-right-color: #0f0f15;
         }
 
         .timeline-date {
-            color: #8ab4f8;
+            color: #aaa;
             font-weight: bold;
             font-size: 1rem;
             margin-bottom: 0.5rem;
@@ -389,11 +388,126 @@
         }
 
         .timeline-skill {
-            background: #444;
-            color: #ddd;
+            background: #1a1a20;
+            color: #bbb;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
             font-size: 0.8rem;
+        }
+
+        .featured-section {
+            margin: 3rem 0;
+        }
+
+        .featured-project {
+            background: #1a1625;
+            border: 1px solid #2a2a35;
+            border-radius: 8px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.15s ease;
+            max-width: 100%;
+        }
+
+        .featured-project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-color: #2a2a35;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: var(--bg-image, none);
+            position: relative;
+        }
+
+        .featured-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, #000000 100%);
+        }
+
+        .featured-content {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: #000000;
+            color: #ddd;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .featured-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .featured-description {
+            color: #bbb;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .featured-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-tech-tag {
+            background: #000000;
+            color: #ddd;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: none;
+        }
+
+        .featured-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .featured-link {
+            color: #ddd;
+            background: #000000;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid #1a1625;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: normal;
+            transition: all 0.15s ease;
+            font-size: 0.9rem;
+        }
+
+        .featured-link:hover {
+            background: #1a1625;
+            border-color: #1a1625;
+            color: #fff;
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -438,6 +552,23 @@
             .timeline-content {
                 margin-left: 20px;
             }
+
+            .featured-image {
+                height: 200px;
+            }
+
+            .featured-content {
+                padding: 1.5rem;
+            }
+
+            .featured-title {
+                font-size: 1.5rem;
+            }
+
+            .featured-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -457,6 +588,41 @@
             
             {% if page.description %}
             <p>{{ page.description }}</p>
+            {% endif %}
+
+            {% assign featured_project = site.data.projects | where: "featured", true | first %}
+            {% if featured_project %}
+            <section class="featured-section">
+                <h2>Featured Project</h2>
+                <div class="featured-project">
+                    <div class="featured-image" {% if featured_project.image %}style="--bg-image: url('{{ '/assets/img/' | append: featured_project.image | relative_url }}')"{% endif %}></div>
+                    <div class="featured-content">
+                        <div class="featured-badge">Featured</div>
+                        <h3 class="featured-title">{{ featured_project.title }}</h3>
+                        <div class="featured-description">{{ featured_project.description }}</div>
+                        
+                        {% if featured_project.technologies %}
+                        <div class="featured-tech">
+                            {% for tech in featured_project.technologies %}
+                            <span class="featured-tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <div class="featured-links">
+                            {% if featured_project.github %}
+                            <a href="{{ featured_project.github }}" class="featured-link" target="_blank" rel="noopener">GitHub</a>
+                            {% endif %}
+                            {% if featured_project.url %}
+                            <a href="{{ featured_project.url | relative_url }}" class="featured-link">Latest Writeup</a>
+                            {% endif %}
+                            {% if featured_project.demo %}
+                            <a href="{{ featured_project.demo }}" class="featured-link" target="_blank" rel="noopener">Demo</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
             {% endif %}
 
             {% if page.experience %}
