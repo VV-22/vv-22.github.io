@@ -8,10 +8,10 @@
 #     - Performance Analysis
 #   github: https://github.com/vv-22/keyboard-latency-testing
 
-- title: OpenGL Shadow Volume Renderer
+- title: OpenGL Rendering Engine
   url: /rendering-with-opengl
   date: 2025-06-12
-  description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, and PBR materials for realistic 3D visualization.
+  description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
   image: Shadow-volume-render.png
   technologies:
     - OpenGL
@@ -19,16 +19,19 @@
     - GLSL Shaders
     - 3D Graphics
     - PBR Rendering
+    - Multi-threading
   github: https://github.com/vv-22/CS5310
 
 - title: AI Behavior System
   url: /building-smart-ai
   date: 2025-04-17
-  description: Intelligent AI system featuring behavior trees and A* pathfinding for game characters with dynamic decision-making capabilities.
+  description: Intelligent AI system featuring behavior trees, spatial functions, perception systems and pathfinding for game characters with complex decision-making capabilities.
   image: behavior-tree.png
   technologies:
-    - Python
-    - AI/ML
+    - C++
+    - Unreal Engine
+    - Spatial Functions
+    - Perception Systems
     - Pathfinding Algorithms
     - Behavior Trees
     - Game Development

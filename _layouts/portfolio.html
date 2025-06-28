@@ -77,12 +77,12 @@
             border: 1px solid #3a3a4a;
             border-radius: 8px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.15s ease;
             position: relative;
             overflow: hidden;
             min-height: 300px;
             backdrop-filter: blur(1px);
-            animation: fadeInUp 0.6s ease-out;
+            animation: fadeInUp 0.3s ease-out;
             animation-fill-mode: both;
         }
 
@@ -133,9 +133,9 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.25;
+            opacity: 0.2;
             z-index: 1;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.15s ease;
         }
 
         .project-card::after {
@@ -147,15 +147,15 @@
             bottom: 0;
             background: linear-gradient(135deg, rgba(28, 27, 34, 0.7) 0%, rgba(42, 42, 53, 0.8) 100%);
             z-index: 1;
-            transition: background 0.3s ease;
+            transition: background 0.15s ease;
         }
 
         .project-card:hover::before {
-            opacity: 0.35;
+            opacity: 0.7;
         }
 
         .project-card:hover::after {
-            background: linear-gradient(135deg, rgba(28, 27, 34, 0.6) 0%, rgba(42, 42, 53, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(28, 27, 34, 0.3) 0%, rgba(42, 42, 53, 0.4) 100%);
         }
 
         .project-card > * {
@@ -165,8 +165,9 @@
 
         .project-card:hover {
             border-color: #8ab4f8;
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(138, 180, 248, 0.2), 0 0 20px rgba(138, 180, 248, 0.1);
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 12px 40px rgba(138, 180, 248, 0.3), 0 0 30px rgba(138, 180, 248, 0.15);
+            z-index: 10;
         }
 
         .project-title {
@@ -179,7 +180,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: all 0.3s ease;
+            transition: all 0.15s ease;
         }
 
         .project-card:hover .project-title {
@@ -226,7 +227,7 @@
             border: 1px solid #8ab4f8;
             border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.15s ease;
         }
 
         .project-link:hover {
@@ -458,59 +459,6 @@
             <p>{{ page.description }}</p>
             {% endif %}
 
-            <section class="projects-section">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    {% for project in site.data.projects %}
-                    <div class="project-card" {% if project.image %}style="--bg-image: url('{{ '/assets/img/' | append: project.image | relative_url }}')"{% endif %}>
-                        <div class="project-title">{{ project.title }}</div>
-                        {% if project.date %}
-                        <div class="project-date">{{ project.date | date: "%B %Y" }}</div>
-                        {% endif %}
-                        <div class="project-description">{{ project.description }}</div>
-                        
-                        {% if project.technologies %}
-                        <div class="project-tech">
-                            {% for tech in project.technologies %}
-                            <span class="tech-tag">{{ tech }}</span>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        
-                        <div class="project-links">
-                            {% if project.url %}
-                            <a href="{{ project.url | relative_url }}" class="project-link">View Project</a>
-                            {% endif %}
-                            {% if project.github %}
-                            <a href="{{ project.github }}" class="project-link" target="_blank" rel="noopener">GitHub</a>
-                            {% endif %}
-                            {% if project.demo %}
-                            <a href="{{ project.demo }}" class="project-link" target="_blank" rel="noopener">Live Demo</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
-
-            {% if page.skills %}
-            <section class="skills-section">
-                <h2>Skills & Technologies</h2>
-                <div class="skills-grid">
-                    {% for category in page.skills %}
-                    <div class="skill-category">
-                        <h3>{{ category.name }}</h3>
-                        <ul class="skill-list">
-                            {% for skill in category.items %}
-                            <li>{{ skill }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
             {% if page.experience %}
             <section class="timeline-section">
                 <h2>Professional Experience</h2>
@@ -535,6 +483,59 @@
                 </div>
             </section>
             {% endif %}
+
+            {% if page.skills %}
+            <section class="skills-section">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    {% for category in page.skills %}
+                    <div class="skill-category">
+                        <h3>{{ category.name }}</h3>
+                        <ul class="skill-list">
+                            {% for skill in category.items %}
+                            <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <section class="projects-section">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    {% for project in site.data.projects %}
+                    <div class="project-card" {% if project.image %}style="--bg-image: url('{{ '/assets/img/' | append: project.image | relative_url }}')"{% endif %}>
+                        <div class="project-title">{{ project.title }}</div>
+                        {% if project.date %}
+                        <div class="project-date">{{ project.date | date: "%B %Y" }}</div>
+                        {% endif %}
+                        <div class="project-description">{{ project.description }}</div>
+                        
+                        {% if project.technologies %}
+                        <div class="project-tech">
+                            {% for tech in project.technologies %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <div class="project-links">
+                            {% if project.github %}
+                            <a href="{{ project.github }}" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            {% endif %}
+                            {% if project.url %}
+                            <a href="{{ project.url | relative_url }}" class="project-link">Project Writeup</a>
+                            {% endif %}
+                            {% if project.demo %}
+                            <a href="{{ project.demo }}" class="project-link" target="_blank" rel="noopener">Live Demo</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
 
             {{ content }}
         </main>

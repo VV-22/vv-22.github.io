@@ -70,7 +70,7 @@ experience:
 
 As a Computer Science grad student, I enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, game development, systems programming, AI/ML applications and web development.
 
-I'm a former Salesforce developer, having worked at Deloitte USI for 3 years (last role was a "Consultant" (Senior Developer)). I've worked on a wide span of tech, varying from Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronus automations using Batch apex and Queuables and platform events, REST API development, CTI Integrations (Genesys and Salesforce).
+I'm a former Salesforce developer, having worked at Deloitte USI for 3 years (last role was a "Consultant" (Senior Developer)). I've worked on a wide span of tech, varying from Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronus automations using Batch apex, Queuables and platform events, REST API development, CTI Integrations (Genesys and Salesforce).
 
 ## Current Focus
 
