@@ -39,16 +39,33 @@
         .nav {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 2rem;
         }
 
         .nav a {
             margin-right: 1rem;
-            color: #aaa;
+            color: #4caf50;
+            text-decoration: none;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #8ab4f8;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .nav a::after {
+            content: ' 🔗';
+            font-size: 0.8em;
+            opacity: 0.7;
         }
 
         .nav a:hover {
-            color: #8ab4f8;
+            color: #66bb6a;
+            border-bottom-color: #fff;
+        }
+
+        .nav a:hover::after {
+            opacity: 1;
         }
 
         h1 {
@@ -435,7 +452,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, #000000 100%);
+            background: linear-gradient(to top, rgba(26, 22, 37, 1) 0%, rgba(26, 22, 37, 0.8) 30%, rgba(26, 22, 37, 0.4) 60%, transparent 100%);
         }
 
         .featured-content {
@@ -515,6 +532,22 @@
         @media (max-width: 768px) {
             body {
                 padding: 1rem;
+                padding-top: 5rem;
+            }
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #1C1B22;
+                z-index: 100;
+                padding: 1rem;
+                border-bottom: 1px solid #444;
+            }
+
+            .nav {
+                margin-bottom: 0;
             }
 
             .project-grid {
@@ -579,9 +612,8 @@
     <div class="container">
         <div class="header">
             <nav class="nav">
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/portfolio' | relative_url }}">Portfolio</a>
-                <a href="{{ '/about' | relative_url }}">About</a>
+                <a href="{{ '/' | relative_url }}">/home</a>
+                <a href="{{ '/portfolio' | relative_url }}">/portfolio</a>
             </nav>
         </div>
 

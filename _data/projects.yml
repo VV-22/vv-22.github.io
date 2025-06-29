@@ -17,7 +17,7 @@
   url: /building-smart-ai
   date: 2025-04-17
   description: Intelligent AI system featuring behavior trees, spatial functions, perception systems and pathfinding for game characters with complex decision-making capabilities.
-  image: behavior-tree.png
+  image: game-ai.png
   technologies:
     - C++
     - Unreal Engine

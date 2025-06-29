@@ -39,27 +39,39 @@
         .nav {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
         }
 
         .nav a {
             margin-right: 1rem;
-            color: #aaa;
+            color: #4caf50;
+            text-decoration: none;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #8ab4f8;
+            font-weight: bold;
+            transition: all 0.2s ease;
         }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            margin-left: auto;
+        .nav a::after {
+            content: ' 🔗';
+            font-size: 0.8em;
+            opacity: 0.7;
         }
 
-        .hamburger span {
-            height: 3px;
-            width: 25px;
-            background: #aaa;
-            margin: 4px 0;
-            border-radius: 2px;
-            transition: 0.3s;
+        .nav a:hover {
+            color: #66bb6a;
+            border-bottom-color: #fff;
+        }
+
+        .nav a:hover::after {
+            opacity: 1;
         }
 
         .projects,
@@ -121,6 +133,19 @@
         @media (max-width: 600px) {
             body {
                 padding: 1rem;
+                padding-top: 5rem;
+            }
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #1C1B22;
+                z-index: 100;
+                padding: 1rem;
+                border-bottom: 1px solid #444;
+                margin-bottom: 0;
             }
 
             .container {
@@ -143,10 +168,6 @@
                 margin-top: 2rem;
                 border-radius: 8px;
                 font-size: 1rem;
-            }
-
-            .hamburger {
-                display: flex;
             }
         }
 
@@ -200,12 +221,9 @@
 
     <div class="header">
         <div class="nav">
-            <a href="/">/home</a>
-            <a href="/portfolio">/portfolio</a>
-            <div class="hamburger" id="hamburger-menu" aria-label="Show about section" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-links">
+                <a href="/">/home</a>
+                <a href="/portfolio">/portfolio</a>
             </div>
         </div>
         <h1>{{ site.title | default: "The Journey of a Curious CS Grad" }}</h1>
@@ -235,8 +253,6 @@
         </div>
     </div>
     <script>
-        // Hamburger menu toggles about modal on mobile
-        const hamburger = document.getElementById('hamburger-menu');
         const aboutModal = document.getElementById('about-modal');
         const aboutModalClose = document.getElementById('about-modal-close');
 
@@ -248,10 +264,6 @@
             aboutModal.style.display = 'none';
         }
 
-        hamburger && hamburger.addEventListener('click', showAboutModal);
-        hamburger && hamburger.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') showAboutModal();
-        });
         aboutModalClose && aboutModalClose.addEventListener('click', hideAboutModal);
         aboutModal && aboutModal.addEventListener('click', function(e) {
             if (e.target === aboutModal) hideAboutModal();
