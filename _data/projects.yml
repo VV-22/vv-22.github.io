@@ -1,18 +1,8 @@
-# - title: Keyboard Latency Testing
-#   url: /keyboard-latency-testing
-#   date: 2024-03-27
-#   description: Lightweight keyboard re-mapper latency testing tool for measuring input lag and optimizing gaming performance.
-#   technologies:
-#     - C++
-#     - Windows API
-#     - Performance Analysis
-#   github: https://github.com/vv-22/keyboard-latency-testing
-
 - title: OpenGL Rendering Engine
   url: /rendering-with-opengl
   date: 2025-06-12
   description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
-  image: Shadow-volume-render.png
+  image: shadow-volumes-normal-mapping.png
   featured: true
   technologies:
     - OpenGL
@@ -37,3 +27,24 @@
     - Behavior Trees
     - Game Development
   github: https://github.com/vv-22/CS5150-final
+
+- title: ImageMagix!
+  date: 2024-12-17
+  description: An image processing application built with Java using Swing, features MVC architecture with command and factory patterns. Implemented 10+ features including blur, sharpen, grayscale, and more, with support for headless operation.
+  image: ImageMagix.png
+  technologies:
+    - Java
+    - Swing
+    - Image Processing
+  github: https://github.khoury.northeastern.edu/vishnuvardan/Image-mod
+
+- title: Procedural Dungeon Generation
+  date: 2025-06-29
+  description: Advanced dungeon generator using Binary Space Partitioning and WaveFunction Collapse algorithms.
+  image: procedural-dungeon.png
+  technologies:
+    - C#
+    - Unity
+    - Procedural Content Generation
+    - Binary Space Partitioning
+    - WaveFunction Collapse

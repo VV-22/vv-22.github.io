@@ -34,36 +34,54 @@ skills:
       - Linux
       - AWS/Cloud
 experience:
-  - company: Deloitte USI
-    role: Consultant (Senior Developer)
-    start_date: "2021"
-    end_date: "2024"
-    description: "Salesforce developer specializing in end-to-end platform development. Worked on Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronous automations using Batch Apex and Queueables, Platform Events, REST API development, and CTI Integrations with Genesys and Salesforce."
+  - company: Northeastern University
+    role: Research Assistant
+    start_date: "Jan 2025"
+    end_date: "Current"
+    description: "Researching advanced procedural generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and real-time pathfinding to create responsive game environments."
+    technologies:
+      - Procedural Generation
+      - AI Behavior Trees
+      - Pathfinding Algorithms
+      - Binary Space Partitioning
+      - WaveFunction Collapse
+      - Game AI
+  - company: Northeastern University
+    role: Teaching Assistant
+    start_date: "Jan 2025"
+    end_date: "Current"
+    description: "Teaching Assistant for Game Programming and Programming in C++ courses. Responsibilities include evaluating student assignments, conducting office hours to provide academic support."
+    technologies:
+        - Unity
+        - C#
+        - C++
+        - Linux
+  - company: Deloitte
+    role: Senior Software Developer
+    start_date: "July 2021"
+    end_date: "Aug 2024"
+    description: "Salesforce developer specializing in end-to-end platform development. Built high-volume notification engine processing 1000+ emails hourly, developed responsive LWC interfaces, created RESTful APIs improving load times by 10%, and integrated CTI systems reducing call handling time by 15%."
     technologies:
       - Salesforce
       - Apex
       - LWC
+      - REST APIs
       - Sales Cloud
       - Service Cloud
-      - REST APIs
       - Genesys CTI
       - Platform Events
-      - Batch Apex
-#   - company: Deloitte USI
-#     role: Consultant (Senior Developer)
-#     start_date: "2021"
-#     end_date: "2024"
-#     description: "Salesforce developer specializing in end-to-end platform development. Worked on Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronous automations using Batch Apex and Queueables, Platform Events, REST API development, and CTI Integrations with Genesys and Salesforce."
-#     technologies:
-#       - Salesforce
-#       - Apex
-#       - LWC
-#       - Sales Cloud
-#       - Service Cloud
-#       - REST APIs
-#       - Genesys CTI
-#       - Platform Events
-#       - Batch Apex
+  - company: Dariyal Games
+    role: Game Developer Intern
+    start_date: "Dec 2019"
+    end_date: "Jan 2020"
+    description: "Game developer focused on performance optimization. Improved isometric game rendering performance through GPU instancing and occlusion culling, designed city management mechanics with FSM-driven NPCs, and built cross-platform leaderboards with MongoDB."
+    technologies:
+      - Unity
+      - GPU Optimization
+      - AI Systems
+      - Pathfinding
+      - MongoDB
+      - Performance Profiling
 ---
 
 ## About Me
