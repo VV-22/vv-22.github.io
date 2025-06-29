@@ -26,13 +26,13 @@ skills:
       - Unity
       - Unreal Engine
       - Blender
-  - name: AI/ML & Tools
+  - name: AI/ML & Cloud Tools
     items:
-      - Machine Learning
+      - OpenCV
       - Git/GitHub
       - Docker
       - Linux
-      - AWS/Cloud
+      - AWS
 experience:
   - company: Northeastern University
     role: Research Assistant
