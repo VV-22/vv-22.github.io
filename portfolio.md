@@ -8,12 +8,13 @@ skills:
     items:
       - C++
       - Java
+      - GLSL
       - C#
       - Python
       - JavaScript
   - name: Web Development
     items:
-      - Salesforce Stack - Apex, LWC
+      - Salesforce Stack - Apex, LWC, SOQL
       - Spring boot
       - HTML/CSS
       - REST APIs
@@ -23,11 +24,13 @@ skills:
     items:
       - 3D Graphics
       - OpenGL
+      - RenderDoc
       - Unity
       - Unreal Engine
       - Blender
   - name: AI/ML & Cloud Tools
     items:
+      - CUDA
       - OpenCV
       - Git/GitHub
       - Docker
