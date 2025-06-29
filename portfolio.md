@@ -60,7 +60,7 @@ experience:
     role: Senior Software Developer
     start_date: "July 2021"
     end_date: "Aug 2024"
-    description: "Salesforce developer specializing in end-to-end platform development. Built high-volume notification engine processing 1000+ emails hourly, developed responsive LWC interfaces, created RESTful APIs improving load times by 10%, and integrated CTI systems reducing call handling time by 15%."
+    description: "Salesforce developer specializing in end-to-end platform development. Built a high-volume notification engine processing 1000+ emails hourly, developed responsive LWC interfaces, created RESTful APIs, and integrated CTI systems."
     technologies:
       - Salesforce
       - Apex
