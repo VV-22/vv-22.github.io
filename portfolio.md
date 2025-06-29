@@ -86,9 +86,18 @@ experience:
 
 ## About Me
 
-As a Computer Science grad student, I enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, game development, systems programming, AI/ML applications and web development.
+<div class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <p>Hi, I'm Vishnu Vardan, a graduate student at Northeastern University, Boston. I enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, game development, systems programming, AI/ML applications and web development.</p>
 
-I'm a former Salesforce developer, having worked at Deloitte USI for 3 years (last role was a "Consultant" (Senior Developer)). I've worked on a wide span of tech, varying from Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronus automations using Batch apex, Queuables and platform events, REST API development, CTI Integrations (Genesys and Salesforce).
+      <p>I'm a former Salesforce developer, having worked at Deloitte USI for 3 years (last role was a "Consultant" (Senior Developer)). I've worked on a wide span of tech, varying from Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronus automations using Batch apex, Queuables and platform events, REST API development, CTI Integrations (Genesys and Salesforce).</p>
+    </div>
+    <div class="about-photo">
+      <img src="{{ '/assets/img/photo.jpg' | relative_url }}" alt="Vishnu Vardan" class="profile-photo">
+    </div>
+  </div>
+</div>
 
 ## Current Focus
 

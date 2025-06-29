@@ -82,6 +82,39 @@
             padding-bottom: 0.5rem;
         }
 
+        .about-section {
+            margin: 2rem 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-photo {
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #444;
+            transition: all 0.2s ease;
+        }
+
+        .profile-photo:hover {
+            border-color: #666;
+            transform: scale(1.02);
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -558,6 +591,18 @@
 
             .skills-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
             }
 
             h1 {
