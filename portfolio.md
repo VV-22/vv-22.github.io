@@ -38,7 +38,7 @@ experience:
     role: Research Assistant
     start_date: "Jan 2025"
     end_date: "Current"
-    description: "Researching advanced procedural generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and real-time pathfinding to create responsive game environments."
+    description: "Researching procedural content generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and perception systems to create novel game environments."
     technologies:
       - Procedural Generation
       - AI Behavior Trees
@@ -50,7 +50,7 @@ experience:
     role: Teaching Assistant
     start_date: "Jan 2025"
     end_date: "Current"
-    description: "Teaching Assistant for Game Programming and Programming in C++ courses. Responsibilities include evaluating student assignments, conducting office hours to provide academic support."
+    description: "Teaching Assistant for Game Programming and Programming in C++ courses. Responsibilities include evaluating student assignments and conducting office hours to provide academic support."
     technologies:
         - Unity
         - C#
