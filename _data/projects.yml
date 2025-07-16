@@ -2,7 +2,7 @@
   url: /rendering-with-opengl
   date: 2025-06-12
   description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
-  image: shadow-volumes-normal-mapping.png
+  image: RE-screenshot.png
   featured: true
   technologies:
     - OpenGL
