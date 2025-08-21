@@ -38,9 +38,20 @@ skills:
       - AWS
 experience:
   - company: Northeastern University
-    role: Research Assistant
+    role: Teaching Assistant
     start_date: "Jan 2025"
     end_date: "Current"
+    description: "Teaching Assistant for Game Programming, Programming in C++ and Computer Graphics courses. Responsibilities include evaluating student assignments and conducting office hours to provide academic support."
+    technologies:
+        - Unity
+        - C#
+        - C++
+        - OpenGL
+        - Linux
+  - company: Northeastern University
+    role: Research Assistant
+    start_date: "Jan 2025"
+    end_date: "Sep 2025"
     description: "Researching procedural content generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and perception systems to create novel game environments."
     technologies:
       - Procedural Generation
@@ -49,16 +60,6 @@ experience:
       - Binary Space Partitioning
       - WaveFunction Collapse
       - Game AI
-  - company: Northeastern University
-    role: Teaching Assistant
-    start_date: "Jan 2025"
-    end_date: "Current"
-    description: "Teaching Assistant for Game Programming and Programming in C++ courses. Responsibilities include evaluating student assignments and conducting office hours to provide academic support."
-    technologies:
-        - Unity
-        - C#
-        - C++
-        - Linux
   - company: Deloitte
     role: Senior Software Developer
     start_date: "July 2021"
@@ -106,7 +107,7 @@ experience:
 
 I'm currently exploring:
 
-- **Real-time graphics programming** with OpenGL and advanced rendering techniques like clustered shading, GPU Frustum Culling, PBR, Multithreading, etc.
+- **Real-time graphics programming** with OpenGL and advanced rendering techniques like clustered shading, GPU Frustum Culling, PBR, Global Illumination, Multithreading, etc.
 - **Game AI** Behavior trees, spatial functions, Procedural Content Generation and pathfinding algorithms
 - **Web Development** for creating interactive and performant applications
 - **Low-level system programming** for performance optimization

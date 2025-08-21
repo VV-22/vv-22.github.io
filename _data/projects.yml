@@ -1,7 +1,7 @@
 - title: OpenGL Rendering Engine
   url: /IBL-VXGI
   date: 2025-06-12
-  description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
+  description: Advanced real-time graphics renderer implementing Global Illumination, shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
   image: VXGI.gif
   featured: true
   technologies:
