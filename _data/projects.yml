@@ -1,8 +1,8 @@
 - title: OpenGL Rendering Engine
-  url: /rendering-with-opengl
+  url: /IBL-VXGI
   date: 2025-06-12
   description: Advanced real-time graphics renderer implementing shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
-  image: RE-screenshot.png
+  image: VXGI.gif
   featured: true
   technologies:
     - OpenGL
@@ -11,6 +11,9 @@
     - 3D Graphics
     - PBR Rendering
     - Multi-threading
+    - Global Illumination
+    - Voxel Cone Tracing
+    - Image Based Lighting
   github: https://github.com/vv-22/CS5310
 
 - title: AI Behavior System
