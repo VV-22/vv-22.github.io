@@ -99,4 +99,4 @@ When I get time, we plan to add much more closed maps, enemies with different be
 
 My very thanks to Prof. Damian for his invaluble advice, and to my teammate Utkarsh, without whom this game's premise could never be put in words.
 
-[^a]: [Github](https://github.com/VV-22/CS5150-final)
+[^a]: [Github](https://github.com/vvgfx/CS5150-final)

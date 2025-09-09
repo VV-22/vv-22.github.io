@@ -12,4 +12,4 @@ Surprisingly, I never did. I guess one of the perks of working in full-stack dev
 
 So it was not long until I ran into [this site](https://www.inmoth.ca). This showed me how cool a site can look without really adding any flashy stuff, and hence became the main inspiration for mine. I'm using jekyll along with github-pages, and I have future plans to add some more content ([looking at you](https://rajagopalvenkat.com/teaching/CS5100/)), maybe showcase some of the cool things I've been working on, and add a proper portfolio page as well, but for now, I'm happy with how this page turned out. [^a]
 
-[^a]: [Source-code](https://github.com/VV-22/vv-22.github.io/tree/gh-pages)
+[^a]: [Source-code](https://github.com/vvgfx/vvgfx.github.io/tree/gh-pages)

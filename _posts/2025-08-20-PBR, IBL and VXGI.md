@@ -146,14 +146,14 @@ My very thanks to prof. Amit Shesh, without whom this project would have never r
 
 and many more references, I will update this once I remember any!
 
-[^a]: [Github](https://github.com/VV-22/CS5310)
+[^a]: [Github](https://github.com/vvgfx/CS5310)
 [^b]: [IBL](https://learnopengl.com/PBR/IBL/Diffuse-irradiance)
 [^c]: [Diffuse Irradiance](https://learnopengl.com/PBR/IBL/Diffuse-irradiance)
 [^d]: [Specular IBL](https://learnopengl.com/PBR/IBL/Specular-IBL)
-[^e]: [Voxelize](https://github.com/VV-22/CS5310/tree/main/src/shaders/VXGI/voxelize)
-[^f]: [Mipmap](https://github.com/VV-22/CS5310/tree/main/src/shaders/VXGI/mipmap)
-[^g]: [GI Shader](https://github.com/VV-22/CS5310/tree/main/src/shaders/VXGI/Render)
+[^e]: [Voxelize](https://github.com/vvgfx/CS5310/tree/main/src/shaders/VXGI/voxelize)
+[^f]: [Mipmap](https://github.com/vvgfx/CS5310/tree/main/src/shaders/VXGI/mipmap)
+[^g]: [GI Shader](https://github.com/vvgfx/CS5310/tree/main/src/shaders/VXGI/Render)
 [^h]: [WickedEngine's GI](https://wickedengine.net/2017/08/voxel-based-global-illumination/)
 [^i]: [IDKEngine](https://github.com/BoyBaykiller/IDKEngine)
 [^j]: [Paper](https://research.nvidia.com/sites/default/files/publications/GIVoxels-pg2011-authors.pdf)
-[^k]: [GI-pipeline](https://github.com/VV-22/CS5310/blob/main/src/Pipeline/GIPipeline.h)
+[^k]: [GI-pipeline](https://github.com/vvgfx/CS5310/blob/main/src/Pipeline/GIPipeline.h)

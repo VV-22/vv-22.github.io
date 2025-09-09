@@ -14,7 +14,7 @@
     - Global Illumination
     - Voxel Cone Tracing
     - Image Based Lighting
-  github: https://github.com/vv-22/CS5310
+  github: https://github.com/vvgfx/CS5310
 
 - title: AI Behavior System
   url: /building-smart-ai
@@ -29,7 +29,7 @@
     - Pathfinding Algorithms
     - Behavior Trees
     - Game Development
-  github: https://github.com/vv-22/CS5150-final
+  github: https://github.com/vvgfx/CS5150-final
 
 - title: ImageMagix!
   date: 2024-12-17

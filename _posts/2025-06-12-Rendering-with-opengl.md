@@ -152,7 +152,7 @@ At this point, I'm gunning towards building a fully editable 3D world. But in or
 
 I hope you've had an interesting read. Thanks for stopping by!
 
-[^a]: [Github](https://github.com/VV-22/CS5310)
+[^a]: [Github](https://github.com/vvgfx/CS5310)
 [^b]: [Silent Hill's fog](https://www.polygon.com/playstation/24196061/silent-hill-crash-bandicoot-tech-limitations)
 [^c]: [Fast-inverse-square root](https://www.youtube.com/watch?v=p8u_k2LIZyo)
 [^d]: [PBR](https://learnopengl.com/PBR/Theory)
