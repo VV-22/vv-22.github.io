@@ -28,7 +28,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -89,8 +89,11 @@
         .about-content {
             display: flex;
             align-items: flex-start;
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 1.5rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about-text {
@@ -117,9 +120,15 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
+        }
+
+        @media (min-width: 1200px) {
+            .project-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .project-card {
@@ -293,8 +302,14 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+        }
+
+        @media (min-width: 1200px) {
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .skill-category {
@@ -345,7 +360,7 @@
 
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -460,6 +475,9 @@
             overflow: hidden;
             transition: all 0.15s ease;
             max-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
         }
 
         .featured-project:hover {
@@ -593,11 +611,16 @@
                 grid-template-columns: 1fr;
             }
 
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+
             .about-content {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 gap: 1.5rem;
+                max-width: none;
             }
 
             .profile-photo {
@@ -706,49 +729,6 @@
             </section>
             {% endif %}
 
-            {% if page.experience %}
-            <section class="timeline-section">
-                <h2>Professional Experience</h2>
-                <div class="timeline">
-                    {% for job in page.experience %}
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">{{ job.start_date }} - {{ job.end_date }}</div>
-                            <div class="timeline-company">{{ job.company }}</div>
-                            <div class="timeline-role">{{ job.role }}</div>
-                            <div class="timeline-description">{{ job.description }}</div>
-                            {% if job.technologies %}
-                            <div class="timeline-skills">
-                                {% for tech in job.technologies %}
-                                <span class="timeline-skill">{{ tech }}</span>
-                                {% endfor %}
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
-            {% if page.skills %}
-            <section class="skills-section">
-                <h2>Skills & Technologies</h2>
-                <div class="skills-grid">
-                    {% for category in page.skills %}
-                    <div class="skill-category">
-                        <h3>{{ category.name }}</h3>
-                        <ul class="skill-list">
-                            {% for skill in category.items %}
-                            <li>{{ skill }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-
             <section class="projects-section">
                 <h2>Projects</h2>
                 <div class="project-grid">
@@ -783,6 +763,49 @@
                     {% endfor %}
                 </div>
             </section>
+
+            {% if page.skills %}
+            <section class="skills-section">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    {% for category in page.skills %}
+                    <div class="skill-category">
+                        <h3>{{ category.name }}</h3>
+                        <ul class="skill-list">
+                            {% for skill in category.items %}
+                            <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            {% if page.experience %}
+            <section class="timeline-section">
+                <h2>Professional Experience</h2>
+                <div class="timeline">
+                    {% for job in page.experience %}
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">{{ job.start_date }} - {{ job.end_date }}</div>
+                            <div class="timeline-company">{{ job.company }}</div>
+                            <div class="timeline-role">{{ job.role }}</div>
+                            <div class="timeline-description">{{ job.description }}</div>
+                            {% if job.technologies %}
+                            <div class="timeline-skills">
+                                {% for tech in job.technologies %}
+                                <span class="timeline-skill">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
 
             {{ content }}
         </main>
