@@ -1,0 +1,78 @@
+<div class="github-calendar-container">
+    <div class="calendar" id="github-calendar">
+        Loading contribution data...
+    </div>
+</div>
+
+<script>
+    // Fetch GitHub contributions and render a modern heatmap
+    async function loadGitHubContributions() {
+        const username = "{{ site.github_username }}";
+        const container = document.getElementById('github-calendar');
+        
+        try {
+            // Fetch contribution data from GitHub API
+            const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
+            const data = await response.json();
+            
+            if (!data.contributions) {
+                container.innerHTML = '<p style="text-align: center; color: #888;">Unable to load contribution data</p>';
+                return;
+            }
+            
+            // Create modern heatmap
+            const contributions = data.contributions;
+            const weeks = [];
+            let currentWeek = [];
+            
+            contributions.forEach((day, index) => {
+                currentWeek.push(day);
+                if ((index + 1) % 7 === 0 || index === contributions.length - 1) {
+                    weeks.push([...currentWeek]);
+                    currentWeek = [];
+                }
+            });
+            
+            // Build HTML
+            let html = '<div class="contribution-graph">';
+            html += '<div class="months-labels"></div>';
+            html += '<div class="graph-container">';
+            html += '<div class="days-labels">';
+            html += '<span style="grid-row: 2">Mon</span>';
+            html += '<span style="grid-row: 4">Wed</span>';
+            html += '<span style="grid-row: 6">Fri</span>';
+            html += '</div>';
+            html += '<div class="weeks">';
+            
+            weeks.forEach((week, weekIndex) => {
+                html += '<div class="week">';
+                week.forEach((day, dayIndex) => {
+                    const level = day.level;
+                    const count = day.count;
+                    const date = day.date;
+                    html += `<div class="day" data-level="${level}" data-count="${count}" data-date="${date}" title="${count} contributions on ${date}"></div>`;
+                });
+                html += '</div>';
+            });
+            
+            html += '</div></div></div>';
+            
+            // Add total contributions
+            const total = data.total[Object.keys(data.total)[0]];
+            html += `<div class="contribution-stats">${total.toLocaleString()} contributions in the last year</div>`;
+            
+            container.innerHTML = html;
+            
+        } catch (error) {
+            console.error('Error loading GitHub contributions:', error);
+            container.innerHTML = '<p style="text-align: center; color: #888;">Unable to load contribution data</p>';
+        }
+    }
+    
+    // Load contributions when page loads
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGitHubContributions);
+    } else {
+        loadGitHubContributions();
+    }
+</script>
