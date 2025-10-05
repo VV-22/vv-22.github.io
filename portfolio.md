@@ -61,7 +61,7 @@ experience:
       - WaveFunction Collapse
       - Game AI
   - company: Deloitte
-    role: Senior Software Developer
+    role: Software Developer II
     start_date: "July 2021"
     end_date: "Aug 2024"
     description: "Salesforce developer specializing in end-to-end platform development. Built a high-volume notification engine processing 1000+ emails hourly, developed responsive LWC interfaces, created RESTful APIs, and integrated CTI systems."
@@ -86,6 +86,11 @@ experience:
       - Pathfinding
       - MongoDB
       - Performance Profiling
+current_focus:
+  - "**Real-time graphics programming** with OpenGL and advanced rendering techniques like clustered shading, GPU Frustum Culling, PBR, Global Illumination, Multithreading, etc."
+  - "**Game AI** Behavior trees, spatial functions, Procedural Content Generation and pathfinding algorithms"
+  - "**Web Development** for creating interactive and performant applications"
+  - "**Low-level system programming** for performance optimization"
 ---
 
 ## About Me
@@ -102,23 +107,3 @@ experience:
     </div>
   </div>
 </div>
-
-## Current Focus
-
-I'm currently exploring:
-
-- **Real-time graphics programming** with OpenGL and advanced rendering techniques like clustered shading, GPU Frustum Culling, PBR, Global Illumination, Multithreading, etc.
-- **Game AI** Behavior trees, spatial functions, Procedural Content Generation and pathfinding algorithms
-- **Web Development** for creating interactive and performant applications
-- **Low-level system programming** for performance optimization
-
-## Get In Touch
-
-Interested in discussing any of these projects/hiring me? Feel free to reach out:
-
-- **Email**: [{{ site.email }}](mailto:{{ site.email }})
-- **GitHub**: [View my GitHub profile](https://github.com/{{ site.github_username }})
-
----
-
-*This portfolio is constantly evolving as I work on new projects and learn new technologies. Check back regularly for updates!*

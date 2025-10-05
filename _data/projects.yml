@@ -31,6 +31,30 @@
     - Game Development
   github: https://github.com/vvgfx/CS5150-final
 
+- title: Teddy!
+  date: 2022-07-09
+  description: A toy-themed endless shooter made with Unity3d
+  image: teddy.png
+  technologies:
+    - Unity3d
+    - C#
+    - Game AI
+    - Animations
+    - Raycasts
+  github: https://github.com/vvgfx/Teddy
+
+- title: Tanks!
+  date: 2022-07-09
+  description: A co-op shooter game made with Unity3d
+  image: tanks.png
+  technologies:
+    - Unity3d
+    - c#
+    - local co-op
+    - particle systems
+  github: https://github.com/vvgfx/Tanks
+
+
 - title: ImageMagix!
   date: 2024-12-17
   description: An image processing application built with Java using Swing, features MVC architecture with command and factory patterns. Implemented 10+ features including blur, sharpen, grayscale, and more, with support for headless operation.

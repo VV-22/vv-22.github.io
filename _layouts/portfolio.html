@@ -462,128 +462,159 @@
             font-size: 0.8rem;
         }
 
-        .featured-section {
-            margin: 3rem 0;
-        }
-
-        .featured-project {
-            background: #1a1625;
-            border: 1px solid #2a2a35;
-            border-radius: 8px;
-            padding: 0;
+        .carousel-container {
+            width: 100%;
+            height: 500px;
             position: relative;
             overflow: hidden;
-            transition: all 0.15s ease;
-            max-width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 2px solid #2a2a35;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .featured-project:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            border-color: #2a2a35;
-        }
-
-        .featured-image {
+        .carousel-slide {
+            position: absolute;
             width: 100%;
-            height: 300px;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-image: var(--bg-image, none);
-            position: relative;
         }
 
-        .featured-image::after {
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide::after {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
+            height: 180px;
+            background: linear-gradient(to top, rgba(28, 27, 34, 0.98), transparent);
+        }
+
+        .carousel-info {
+            position: absolute;
             bottom: 0;
-            background: linear-gradient(to top, rgba(26, 22, 37, 1) 0%, rgba(26, 22, 37, 0.8) 30%, rgba(26, 22, 37, 0.4) 60%, transparent 100%);
-        }
-
-        .featured-content {
-            padding: 2rem;
-            position: relative;
-        }
-
-        .featured-badge {
-            display: inline-block;
-            background: #000000;
-            color: #ddd;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: normal;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .featured-title {
+            left: 0;
+            right: 0;
+            padding: 2.5rem;
             color: #fff;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            z-index: 10;
+        }
+
+        .carousel-badge {
+            display: none;
+        }
+
+        .carousel-title {
+            font-size: 2.2rem;
             font-weight: bold;
-            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
-        .featured-description {
-            color: #bbb;
-            font-size: 1rem;
+        .carousel-description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
             line-height: 1.6;
-            margin-bottom: 2rem;
-            text-align: left;
         }
 
-        .featured-tech {
+        .carousel-controls {
+            position: absolute;
+            bottom: 2.5rem;
+            right: 2.5rem;
             display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 2rem;
+            z-index: 10;
         }
 
-        .featured-tech-tag {
-            background: #444;
-            color: #ddd;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .carousel-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(1.2);
+        }
+
+        .carousel-dot.active {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #fff;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
             border: none;
-        }
-
-        .featured-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .featured-link {
-            color: #ddd;
-            background: #000000;
-            padding: 0.8rem 1.2rem;
-            border: 1px solid #1a1625;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            user-select: none;
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: normal;
-            transition: all 0.15s ease;
-            font-size: 0.9rem;
         }
 
-        .featured-link:hover {
-            background: #2a2a35;
-            border-color: #2a2a35;
-            color: #fff;
-            text-decoration: none;
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-prev {
+            left: 1rem;
+        }
+
+        .carousel-next {
+            right: 1rem;
         }
 
         @media (max-width: 768px) {
             body {
                 padding: 1rem;
                 padding-top: 5rem;
+            }
+
+            .carousel-container {
+                height: 300px;
+                margin-bottom: 2rem;
+            }
+
+            .carousel-title {
+                font-size: 1.4rem;
+            }
+
+            .carousel-description {
+                font-size: 0.95rem;
+            }
+
+            .carousel-info {
+                padding: 1.5rem;
+            }
+
+            .carousel-nav {
+                padding: 0.5rem 1rem;
+                font-size: 1.2rem;
+            }
+
+            .carousel-controls {
+                bottom: 1rem;
+                right: 1rem;
             }
 
             .header {
@@ -608,10 +639,6 @@
             }
 
             .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-project {
                 grid-template-columns: 1fr;
             }
 
@@ -657,23 +684,6 @@
             .timeline-content {
                 margin-left: 20px;
             }
-
-            .featured-image {
-                height: 200px;
-            }
-
-            .featured-content {
-                padding: 1.5rem;
-            }
-
-            .featured-title {
-                font-size: 1.5rem;
-            }
-
-            .featured-links {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
         }
     </style>
 </head>
@@ -694,40 +704,89 @@
             <p>{{ page.description }}</p>
             {% endif %}
 
-            {% assign featured_project = site.data.projects | where: "featured", true | first %}
-            {% if featured_project %}
-            <section class="featured-section">
-                <h2>Featured Project</h2>
-                <div class="featured-project">
-                    <div class="featured-image" {% if featured_project.image %}style="--bg-image: url('{{ '/assets/img/' | append: featured_project.image | relative_url }}')"{% endif %}></div>
-                    <div class="featured-content">
-                        <div class="featured-badge">Featured</div>
-                        <h3 class="featured-title">{{ featured_project.title }}</h3>
-                        <div class="featured-description">{{ featured_project.description }}</div>
-                        
-                        {% if featured_project.technologies %}
-                        <div class="featured-tech">
-                            {% for tech in featured_project.technologies %}
-                            <span class="featured-tech-tag">{{ tech }}</span>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        
-                        <div class="featured-links">
-                            {% if featured_project.github %}
-                            <a href="{{ featured_project.github }}" class="featured-link" target="_blank" rel="noopener">GitHub</a>
-                            {% endif %}
-                            {% if featured_project.url %}
-                            <a href="{{ featured_project.url | relative_url }}" class="featured-link">Latest Writeup</a>
-                            {% endif %}
-                            {% if featured_project.demo %}
-                            <a href="{{ featured_project.demo }}" class="featured-link" target="_blank" rel="noopener">Demo</a>
-                            {% endif %}
-                        </div>
-                    </div>
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+            {% for project in site.data.projects %}
+            {% if project.image %}
+            <div class="carousel-slide {% if forloop.first %}active{% endif %}" 
+                 style="background-image: url('{{ '/assets/img/' | append: project.image | relative_url }}')">
+                <div class="carousel-info">
+                    <div class="carousel-badge">Featured</div>
+                    <div class="carousel-title">{{ project.title }}</div>
+                    <div class="carousel-description">{{ project.description }}</div>
                 </div>
-            </section>
+            </div>
             {% endif %}
+            {% endfor %}
+            
+            <div class="carousel-nav carousel-prev" onclick="moveCarousel(-1)">&#10094;</div>
+            <div class="carousel-nav carousel-next" onclick="moveCarousel(1)">&#10095;</div>
+            
+            <div class="carousel-controls">
+                {% for project in site.data.projects %}
+                {% if project.image %}
+                <span class="carousel-dot {% if forloop.first %}active{% endif %}" 
+                      onclick="currentSlide({{ forloop.index0 }})"></span>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <script>
+            let currentIndex = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.carousel-slide');
+                const dots = document.querySelectorAll('.carousel-dot');
+                
+                if (index >= slides.length) currentIndex = 0;
+                if (index < 0) currentIndex = slides.length - 1;
+                
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+            }
+
+            function moveCarousel(direction) {
+                currentIndex += direction;
+                if (currentIndex >= document.querySelectorAll('.carousel-slide').length) {
+                    currentIndex = 0;
+                } else if (currentIndex < 0) {
+                    currentIndex = document.querySelectorAll('.carousel-slide').length - 1;
+                }
+                showSlide(currentIndex);
+                resetAutoSlide();
+            }
+
+            function currentSlide(index) {
+                currentIndex = index;
+                showSlide(currentIndex);
+                resetAutoSlide();
+            }
+
+            function autoSlide() {
+                currentIndex++;
+                if (currentIndex >= document.querySelectorAll('.carousel-slide').length) {
+                    currentIndex = 0;
+                }
+                showSlide(currentIndex);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(autoSlide, 5000);
+            }
+
+            // Start auto-sliding when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                autoSlideInterval = setInterval(autoSlide, 5000);
+            });
+        </script>
+
+            {{ content }}
 
             <section class="projects-section">
                 <h2>Projects</h2>
@@ -807,7 +866,28 @@
             </section>
             {% endif %}
 
-            {{ content }}
+            {% if page.current_focus %}
+            <section class="about-section">
+                <h2>Current Focus</h2>
+                <p>I'm currently exploring:</p>
+                <ul>
+                    {% for focus in page.current_focus %}
+                    <li>{{ focus | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+
+            <section class="about-section">
+                <h2>Get In Touch</h2>
+                <p>Interested in discussing any of these projects/hiring me? Feel free to reach out:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">View my GitHub profile</a></li>
+                </ul>
+                <hr>
+                <p style="font-style: italic; opacity: 0.8;">This portfolio is constantly evolving as I work on new projects and learn new technologies. Check back regularly for updates!</p>
+            </section>
         </main>
     </div>
 </body>
