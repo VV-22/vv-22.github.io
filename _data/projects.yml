@@ -1,7 +1,7 @@
 - title: OpenGL Rendering Engine
   url: /IBL-VXGI
   date: 2025-06-12
-  description: Advanced real-time graphics renderer implementing Global Illumination, shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, MCP, and more.
+  description: Real-time graphics renderer implementing Global Illumination, shadow volumes, normal mapping, PBR Materials, multi-threading, clustered rendering, and more.
   image: VXGI.gif
   featured: true
   technologies:
@@ -67,7 +67,7 @@
 
 - title: Procedural Dungeon Generation
   date: 2025-06-29
-  description: Advanced dungeon generator using Binary Space Partitioning and WaveFunction Collapse algorithms.
+  description: Dungeon generator using Binary Space Partitioning and WaveFunction Collapse algorithms, with AI behavior using Markov chains.
   image: procedural-dungeon.png
   technologies:
     - C#
