@@ -200,9 +200,13 @@
             {% endif %}
 
             <div class="github-section-wrapper">
-                <p style="text-align: center; margin-bottom: 1rem; color: #888;">
-                    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" style="color: #8ab4f8;">View my GitHub profile →</a>
-                </p>
+                <div style="text-align: center; margin-bottom: 1rem;display: flex;align-items: center;justify-content: center;">
+                    <p style="color: #8ab4f8;">View my GitHub profile →</p>
+                    <!-- https://hitscounter.dev/history -> use url "vvgfx.github.io" -->
+                    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
+                        <img src="https://hitscounter.dev/api/hit?url=vvgfx.github.io&label=&icon=github&color=%23031633&message=&style=for-the-badge&tz=US%2FEast-Indiana" style="padding-top: 0.5rem;padding-left: 0.5rem;" alt="GitHub Profile Views">
+                    </a>
+                </div>
                 {% include github-contributions.html %}
                 <hr>
                 <p style="text-align: center; font-style: italic; opacity: 0.8; color: #888;">This portfolio is constantly evolving as I work on new projects and learn new technologies. Check back regularly for updates!</p>
