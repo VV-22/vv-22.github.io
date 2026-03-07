@@ -18,7 +18,7 @@
 
 - title: Vulkan Engine
   description: A rendergraph-inspired rendering engine built in Vulkan
-  image: VK_Engine.png
+  image: Vk_Engine.png
   technologies:
     - C++
     - Vulkan
