@@ -16,6 +16,28 @@
     - Image Based Lighting
   github: https://github.com/vvgfx/CS5310
 
+- title: Vulkan Engine
+  description: A rendergraph-inspired rendering engine built in Vulkan
+  image: VK_Engine.png
+  technologies:
+    - C++
+    - Vulkan
+    - PBR
+    - Rendergraph
+    - Clustered Forward rendering
+    - Deferred rendering
+    - MSAA
+  github: https://github.com/vvgfx/VKRendergraph
+
+- title: Remote FileSystem
+  description: A multiththreaded file-system built with TCP sockets in Linux
+  image: rfs.png
+  technologies:
+    - C
+    - TCP Sockets
+    - Linux
+  github: https://github.com/vvgfx/remote-filesys
+
 - title: AI Behavior System
   url: /building-smart-ai
   date: 2025-04-17
@@ -43,17 +65,16 @@
     - Raycasts
   github: https://github.com/vvgfx/Teddy
 
-- title: Tanks!
-  date: 2022-07-09
-  description: A co-op shooter game made with Unity3d
-  image: tanks.png
-  technologies:
-    - Unity3d
-    - c#
-    - local co-op
-    - particle systems
-  github: https://github.com/vvgfx/Tanks
-
+# - title: Tanks!
+#   date: 2022-07-09
+#   description: A co-op shooter game made with Unity3d
+#   image: tanks.png
+#   technologies:
+#     - Unity3d
+#     - c#
+#     - local co-op
+#     - particle systems
+#   github: https://github.com/vvgfx/Tanks
 
 - title: ImageMagix!
   date: 2024-12-17
