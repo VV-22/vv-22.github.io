@@ -7,11 +7,21 @@ skills:
   - name: Programming Languages
     items:
       - C++
-      - Java
       - GLSL
-      - C#
       - Python
+      - C#
       - JavaScript
+      - Java
+  - name: Game Development
+    items:
+      - 3D Graphics
+      - OpenGL
+      - Vulkan
+      - RenderDoc
+      - Nvidia Nsight
+      - Unity
+      - Unreal Engine
+      - Blender
   - name: Web Development
     items:
       - Salesforce Stack - Apex, LWC, SOQL
@@ -20,14 +30,6 @@ skills:
       - REST APIs
       - MongoDB
       - PostgreSQL
-  - name: Game Development
-    items:
-      - 3D Graphics
-      - OpenGL
-      - RenderDoc
-      - Unity
-      - Unreal Engine
-      - Blender
   - name: AI/ML & Cloud Tools
     items:
       - CUDA
@@ -37,22 +39,33 @@ skills:
       - Linux
       - AWS
 experience:
+  - company: Storm Flag Games
+    role: Game Engineer Co-op
+    start_date: "Jan 2026"
+    end_date: "Current"
+    description: "Graphics engineering at Storm Flag Games, adding new features to an in-house engine for a massively popular MMORPG. Working on the transition from a legacy forward renderer to a modernized deferred renderer with real-time lighting, shadows, post-processing and multithreading."
+    technologies:
+        - C++
+        - OpenGL
+        - Renderdoc
+        - Tracy
+        # - Nvidia Nsight
   - company: Northeastern University
     role: Teaching Assistant
     start_date: "Jan 2025"
-    end_date: "Current"
+    end_date: "Jan 2026"
     description: "Teaching Assistant for Game Programming, Programming in C++ and Computer Graphics courses. Responsibilities include evaluating student assignments and conducting office hours to provide academic support."
     technologies:
-        - Unity
-        - C#
         - C++
         - OpenGL
+        - Unity
+        - C#
         - Linux
   - company: Northeastern University
     role: Research Assistant
     start_date: "Jan 2025"
     end_date: "Sep 2025"
-    description: "Researching procedural content generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and perception systems to create novel game environments."
+    description: "Researching procedural content generation and AI systems. Building intelligent dungeon generators with Binary Space Partitioning and WaveFunction Collapse, coupled with AI that uses behavior trees and perception systems to create unique game environments."
     technologies:
       - Procedural Generation
       - AI Behavior Trees
@@ -87,10 +100,10 @@ experience:
       - MongoDB
       - Performance Profiling
 current_focus:
-  - "**Real-time graphics programming** with OpenGL and advanced rendering techniques like clustered shading, GPU Frustum Culling, PBR, Global Illumination, Multithreading, etc."
+  - "**Real-time graphics programming** with Vulkan and OpenGL, implementing advanced rendering techniques like deferred rendering, clustered shading, GPU Frustum Culling, PBR, Global Illumination, Multithreading, etc."
+  - "**Low-level systems programming** for working on open-source graphics drivers"
   - "**Game AI** Behavior trees, spatial functions, Procedural Content Generation and pathfinding algorithms"
   - "**Web Development** for creating interactive and performant applications"
-  - "**Low-level system programming** for performance optimization"
 ---
 
 ## About Me
@@ -101,7 +114,7 @@ current_focus:
       <img src="{{ '/assets/img/photo.jpg' | relative_url }}" alt="Vishnu Vardan" class="profile-photo">
     </div>
     <div class="about-text">
-      <p>Hi, I'm Vishnu Vardan, a graduate student at Northeastern University, Boston. I mainly work on graphics and game programming (OpenGL, Vulkan, Unity Engine, Unreal Engine and so on), but I also enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, game development, systems programming, AI/ML applications and web development.</p>
+      <p>Hi, I'm Vishnu Vardan, a graduate student at Northeastern University, Boston. I mainly work on graphics and game programming (Vulkan, OpenGL, Unity Engine, Unreal Engine and so on), but I also enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, game development, systems programming, AI/ML applications and web development.</p>
 
       <p>I'm a former Salesforce developer, having worked at Deloitte USI for 3 years (last role was a "Consultant"(SDE II)). I've worked on a wide span of tech, varying from Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronus automations using Batch apex, Queuables and platform events, REST API development and CTI Integrations.</p>
     </div>

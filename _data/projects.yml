@@ -1,3 +1,16 @@
+- title: Vulkan Engine
+  description: A rendergraph-inspired rendering engine built in Vulkan. Features MSAA, Deferred Rendering, GLTF support and more.
+  image: Vk_Engine.png
+  technologies:
+    - C++
+    - Vulkan
+    - PBR
+    - Rendergraph
+    - Deferred rendering
+    - Clustered shading
+    - MSAA
+  github: https://github.com/vvgfx/VKRendergraph
+
 - title: OpenGL Rendering Engine
   url: /IBL-VXGI
   date: 2025-06-12
@@ -15,19 +28,6 @@
     - Voxel Cone Tracing
     - Image Based Lighting
   github: https://github.com/vvgfx/CS5310
-
-- title: Vulkan Engine
-  description: A rendergraph-inspired rendering engine built in Vulkan
-  image: Vk_Engine.png
-  technologies:
-    - C++
-    - Vulkan
-    - PBR
-    - Rendergraph
-    - Clustered Forward rendering
-    - Deferred rendering
-    - MSAA
-  github: https://github.com/vvgfx/VKRendergraph
 
 - title: Remote FileSystem
   description: A multiththreaded file-system built with TCP sockets in Linux
