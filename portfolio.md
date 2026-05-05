@@ -101,7 +101,7 @@ experience:
       - Performance Profiling
 current_focus:
   - "**Real-time graphics programming** with Vulkan and OpenGL, implementing advanced rendering techniques like deferred rendering, clustered shading, GPU Frustum Culling, PBR, Global Illumination, Multithreading, etc."
-  - "**Low-level systems programming** for working on open-source graphics drivers"
+  - "**Low-level systems programming** for working on open-source graphics drivers (Especially Mesa for linux graphics drivers)"
   - "**Game AI** Behavior trees, spatial functions, Procedural Content Generation and pathfinding algorithms"
   - "**Web Development** for creating interactive and performant applications"
 ---
@@ -114,7 +114,7 @@ current_focus:
       <img src="{{ '/assets/img/photo.jpg' | relative_url }}" alt="Vishnu Vardan" class="profile-photo">
     </div>
     <div class="about-text">
-      <p>Hi, I'm Vishnu Vardan, a graduate student at Northeastern University, Boston. I mainly work on graphics and game programming (Vulkan, OpenGL, Unity Engine, Unreal Engine and so on), but I also enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, game development, systems programming, AI/ML applications and web development.</p>
+      <p>Hi, I'm Vishnu Vardan, a graduate student at Northeastern University, Boston. I mainly work on graphics programming (Vulkan, OpenGL, Unity Engine, Unreal Engine, etc.) and systems programming (I'm an open source contributor at Mesa - the linux graphics driver stack.), but I also enjoy working on diverse projects that challenge me to learn and grow. My portfolio spans graphics programming, systems programming, game development, AI/ML applications and web development.</p>
 
       <p>I'm a former Salesforce developer, having worked at Deloitte USI for 3 years (last role was a "Consultant"(SDE II)). I've worked on a wide span of tech, varying from Frontend development with LWC in Sales and Service Cloud, Backend development using Apex, Asynchronus automations using Batch apex, Queuables and platform events, REST API development and CTI Integrations.</p>
     </div>
