@@ -1,7 +1,7 @@
 body {
     background-color: #1C1B22;
     color: #ddd;
-    font-family: monospace;
+    font-family: 'Ubuntu Mono', monospace;
     margin: 0;
     padding: 1.5rem 2rem;
     font-size: 16px;
